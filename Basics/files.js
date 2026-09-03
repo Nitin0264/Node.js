@@ -1,13 +1,23 @@
 const fs = require('fs')
-// file system
+// // file system
 
-fs.readFile('./docs/blog1.txt',(err,data)=>
+// fs.readFile('./docs/blog1.txt',(err,data)=>
+// {
+//  if(err)
+//  {
+//   console.log(err);
+//  }
+//  console.log(data.toString())
+// })
+
+// console.log("this is the last line")
+
+//Writing Files
+fs.writeFile('./docs/blog1.txt','Hello World',()=>
 {
- if(err)
- {
-  console.log(err);
- }
- console.log(data.toString())
+  console.log('file was written ')
 })
-
-console.log("this is the last line")
+fs.writeFile('./docs/blog2.txt','hello ninjas',()=>
+{
+  console.log('file was wriiten ')
+})
