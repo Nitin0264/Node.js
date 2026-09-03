@@ -45,3 +45,15 @@ else{
     console.log('folder deleted ')
   })
 }
+
+//deleting files
+if(fs.existsSync('./docs./deleteme.txt'))
+{
+  fs.unlike('./docs/deleteme.txt',()=>
+  {
+    if(err){
+      console.log(err)
+    }
+    console.log('file deleted')
+  })
+}
