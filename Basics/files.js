@@ -57,3 +57,6 @@ if(fs.existsSync('./docs./deleteme.txt'))
     console.log('file deleted')
   })
 }
+
+// Streams
+//start using a data before it has finished loading 
