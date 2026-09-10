@@ -1,15 +1,25 @@
 const http = require('http')
+const fs = require('fs');
 
 const server = http.createServer((req,res)=>
 {
  console.log(req.url,req.method)
 
  //set header content type 
- res.setHeader('content-Type', 'text/html')
- res.write('<head>  <link rel ="stylesheet href ="#"> </head>')
- res.write(' <p>hello ,ninjas</p>');
- res.write(' <p>hello again ,ninjas</p>');
- res.end();
+ res.setHeader('content-Type', 'text/html');
+
+   fs.readFile('./views/index.html', (err,data)=>
+  {
+    if(err)
+    {
+      console.log(err);
+      res.end();
+    }
+    else{
+   
+      res.end(data);
+    }
+  })
 });
 
 server.listen(3000,'localhost',()=>
