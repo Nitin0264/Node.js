@@ -8,25 +8,6 @@ const server = http.createServer((req,res)=>
  //set header content type 
  res.setHeader('content-Type', 'text/html');
 
-
-   let path  = './views/index.html';
-   switch(req.url)
-   {
-    case '/':
-    path += 'index.html';
-    res.statusCode = 200;
-    break;
-   case '/about':
-    path+= 'about.html';
-        res.statusCode = 200;
-
-    break;
-    case '404.html':
-      path +='404.html'
-          res.statusCode = 404;
-
-    break;
-    }
    fs.readFile('./views/index.html', (err,data)=>
   {
     if(err)
